@@ -14,8 +14,6 @@ package com.nhnacademy.thread;
 
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.Objects;
-
 @Slf4j
 //TODO#1 CounterThread는 Thread를 상속 합니다.
 public class CounterThread extends Thread {
@@ -26,7 +24,7 @@ public class CounterThread extends Thread {
 
     public CounterThread(String name, long countMaxSize) {
         //TODO#2 name <-- null 이거나 공백 문자열이면 IllegalArgumentException이 발생 합니다.
-        if (name.equals(null) || name.isEmpty()) {
+        if (name == null || name.isEmpty()) {
             throw new IllegalArgumentException();
         }
         //TODO#3 countMaxSize <=0 이면 IllegalArgumentException이 발생 합니다.
